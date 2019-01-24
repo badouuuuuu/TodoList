@@ -45,6 +45,11 @@ app.get('/todos/delete/:id', (req, res) => {
 
 }) 
 
+app.get('/todos/deleteall', (req, res) => {
+   req.session.todolist = [];
+   res.redirect('/todos')
+})
+
 
 
 app.listen(8080);

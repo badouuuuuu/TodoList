@@ -8,20 +8,22 @@
         </style>
     </head>
 
-    <body style="color: white; background-color: rgb(8, 11, 73); margin: 0 auto; text-align: center; width: 400px; height: auto; padding-top: 20px;">
-        <h1>Ma todolist</h1>
+    <body style="color: white; background-color: rgb(8, 11, 73); margin: 0 auto; text-align: center; width: 400px; height: auto; padding-top: 20px; border-radios: 5px; border: 1px solid white; padding: 50px;">
+        <h1>My Todolist</h1>
 
        <form action="/todos/add/" method="post" >
             <p>
-                <label for="newtodo">Que dois-je faire ? <br> <br> </label>
-                <input style="padding: 10px; border-radius: 5px; border:none;" type="text" name="newtodo" id="newtodo" autofocus />
-                <input style="padding: 10px; border-radius: 5px; border:none;" type="submit" />
+                <input style="padding: 7px; border-radius: 5px; border:none;" type="text" name="newtodo" id="newtodo" autofocus placeholder="Add something..." />
+                <input style="background-color: yellow; padding: 7px; border-radius: 5px; border:none;" type="submit" />
             </p>
         </form>
-        <ul>
+        <br>
+        <ul style="text-align:justify; margin: 0 auto; margin-left: 80px;">
          <% todolist.forEach(function(todo, index) { %>
              <li style="list-style:  none; color: white;"><a style="padding: 1px; color: red; font-size: 16px" href="/todos/delete/<%= index %>">✘</a> <%= todo %></li>
          <% }); %>
+         <br>
+         <a href="/todos/deleteall" style="float:right; color:red; font-size:12px;"> Delete All</a>
          </ul>
  
     </body>
